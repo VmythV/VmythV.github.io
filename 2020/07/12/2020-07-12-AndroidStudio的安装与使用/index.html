@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Android Studio的安装与使用 | VmythV's blog</title><meta name="keywords" content="教程,AndroidStudio"><meta name="author" content="木落"><meta name="copyright" content="木落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="Android Studio 是谷歌推出的一个Android集成开发工具，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。 一、下载1、首先下载安装包。可以从以下任一地址下载。 这个是官方下载地址 https:&#x2F;&#x2F;developer.android.google.cn&#x2F;studio 这个是官方下载各">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio的安装与使用">
+<meta property="og:url" content="https://vmythv.github.io/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="VmythV&#39;s blog">
+<meta property="og:description" content="Android Studio 是谷歌推出的一个Android集成开发工具，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。 一、下载1、首先下载安装包。可以从以下任一地址下载。 这个是官方下载地址 https:&#x2F;&#x2F;developer.android.google.cn&#x2F;studio 这个是官方下载各">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png">
+<meta property="article:published_time" content="2020-07-12T08:55:20.000Z">
+<meta property="article:modified_time" content="2020-11-14T12:04:14.027Z">
+<meta property="article:author" content="木落">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="AndroidStudio">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://vmythv.github.io/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"自上次更新后过了太长时间，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-14 20:04:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2203988_phpekl1uuza.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">VmythV's blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">Android Studio的安装与使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-12T08:55:20.000Z" title="发表于 2020-07-12 16:55:20">2020-07-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-14T12:04:14.027Z" title="更新于 2020-11-14 20:04:14">2020-11-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Android Studio 是谷歌推出的一个Android集成开发工具，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。</p>
+<h1 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h1><p>1、首先下载安装包。可以从以下任一地址下载。</p>
+<p>这个是官方下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio">https://developer.android.google.cn/studio</a></p>
+<p>这个是官方下载各个版本的地址</p>
+<p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/studio/archive">https://developer.android.google.cn/studio/archive</a></p>
+<p>如果上述地址访问不到可以使用这个地址，是Android Studio 中文组做的本地化支持的地址</p>
+<p><a target="_blank" rel="noopener" href="http://www.android-studio.org/">http://www.android-studio.org/</a></p>
+<p>下载的包有两中形式，一种是以exe结尾的文件，是安装版（推荐），另一种是以zip结尾的，是便携版。</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172006.png"></p>
+<p>这里我以<em>android-studio-ide-193.6514223-windows.exe</em>安装版进行演示。</p>
+<h1 id="二、安装基础软件"><a href="#二、安装基础软件" class="headerlink" title="二、安装基础软件"></a>二、安装基础软件</h1><p>按照下列步骤进行：</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172120.png"></p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172150.png"></p>
+<p>下面一步是安装路径的选择，建议不要有中文</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172323.png"></p>
+<p>直接点击install</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172345.png"></p>
+<p>等待片刻</p>
+<p>直接next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172448.png"></p>
+<p>直接finish</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172651.png"></p>
+<p>到此基础部分已经完成。</p>
+<h1 id="三、软件进一步安装设置"><a href="#三、软件进一步安装设置" class="headerlink" title="三、软件进一步安装设置"></a>三、软件进一步安装设置</h1><p>从这里开始建议每一步和我都一样</p>
+<p>点第二个</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712172841.png"></p>
+<p>点取消</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/image-20200712172921017.png"></p>
+<p>点next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/image-20200712172946208.png"></p>
+<p>这里选择第二个，这样可以自定义安装SDK的位置</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712173024.png"></p>
+<p>按要求选择你的JDK安装位置，然后next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/image-20200712173141368.png"></p>
+<p>选择主题，看你喜欢任意选择，然后点next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712173217.png"></p>
+<p>这里有讲究</p>
+<p>我这里是intel的处理器，并且开启了虚拟化，如果你的设备和我不一样，可能在之后出现问题。</p>
+<p>建议勾选我勾选的选项，我们可以在之后安装Android Vitual Device。</p>
+<p>Android SDK Location 是选择安装Android SDK的位置，路径一定不要有中文，一定不要有标点符号，一定不要有空格，不然可能出现错误。</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712173435.png"></p>
+<p>这里选择需要分配的内存，看个人电脑的情况，我这里分配4096MB，然后点next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712174136.png"></p>
+<p>确认无误后，点finish</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712174233.png"></p>
+<p>安装过程可能有点慢，请耐心等候。</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712174638.png"></p>
+<p>期间可能弹出让你命令行确定，点击确定即可。</p>
+<p>最后安装成功的界面。点finish</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712174737.png"></p>
+<p>安装完成后不要创建新项目，接下来还有几步。</p>
+<h1 id="四、换国内安装源"><a href="#四、换国内安装源" class="headerlink" title="四、换国内安装源"></a>四、换国内安装源</h1><p>这一步可以加速依赖资源。（也可以不设置）</p>
+<p>到这界面，不要创建新项目。</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712174843.png"></p>
+<p>打开文件夹，跳转到如下目录</p>
+<p>C:\Users\你的用户名，在这个目录下新建<code>.gradle</code>文件夹，进入该文件夹</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712175232.png"></p>
+<p>创建<code>init.gradle</code>文件，并用记事本打开</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712175450.png"></p>
+<p>编写如下内容，保存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">allprojects&#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        def ALIYUN_REPOSITORY_URL &#x3D; &#39;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#39;</span><br><span class="line">        def ALIYUN_JCENTER_URL &#x3D; &#39;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;repositories&#x2F;jcenter&#39;</span><br><span class="line">        all &#123; ArtifactRepository repo -&gt;</span><br><span class="line">            if(repo instanceof MavenArtifactRepository)&#123;</span><br><span class="line">                def url &#x3D; repo.url.toString()</span><br><span class="line">                if (url.startsWith(&#39;https:&#x2F;&#x2F;repo1.maven.org&#x2F;maven2&#39;)) &#123;</span><br><span class="line">                    project.logger.lifecycle &quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_REPOSITORY_URL.&quot;</span><br><span class="line">                    remove repo</span><br><span class="line">                &#125;</span><br><span class="line">                if (url.startsWith(&#39;https:&#x2F;&#x2F;jcenter.bintray.com&#x2F;&#39;)) &#123;</span><br><span class="line">                    project.logger.lifecycle &quot;Repository $&#123;repo.url&#125; replaced by $ALIYUN_JCENTER_URL.&quot;</span><br><span class="line">                    remove repo</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maven &#123;</span><br><span class="line">                url ALIYUN_REPOSITORY_URL</span><br><span class="line">            url ALIYUN_JCENTER_URL</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="五、第一个Hello-World-程序"><a href="#五、第一个Hello-World-程序" class="headerlink" title="五、第一个Hello World 程序"></a>五、第一个Hello World 程序</h1><p>创建项目</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712175834.png"></p>
+<p>选择  Empty Activity即可，next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712175941.png"></p>
+<p>按照自己的需要创建项目，最后点finish</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712180309.png"></p>
+<p>第一次加载会很慢，耐心等待</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712180418.png"></p>
+<p>点击上面图标，进行项目的设置</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712182508.png"></p>
+<p>配置NDK</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712182718.png"></p>
+<p>点Accept，然后next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712182942.png"></p>
+<p>会需要一点时间，请耐心等候</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712183605.png"></p>
+<p>配置完成后，就可以下载之前没有下载的Android Vitual Device</p>
+<p>点击上面的AVD Manager</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712184512.png"></p>
+<p>创建一个新的Virtual Device</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712184544.png"></p>
+<p>选择想要的模板类型，看自己需求，建议图中的两个，选择一个后点next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712184739.png"></p>
+<p>选择要下载的系统镜像，我这边选择的是第一个</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712184818.png"></p>
+<p>Accept，next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712184909.png"></p>
+<p>稍等片刻，下载完成后点finish</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712184936.png"></p>
+<p>点next</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712185421.png"></p>
+<p>这边可以命名，也可以不命名，然后点finish</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712185446.png"></p>
+<p>到这里就基本差不多了，剩下的就是编写程序了，然后启动运行了</p>
+<p>点右上角绿色箭头运行</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712185653.png"></p>
+<p>期间可能会弹出警告，不用管，点ok</p>
+<p>到这里就可以完成了</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712190042.png"></p>
+<h1 id="六、安装过程中可能会出现的问题"><a href="#六、安装过程中可能会出现的问题" class="headerlink" title="六、安装过程中可能会出现的问题"></a>六、安装过程中可能会出现的问题</h1><h2 id="1、gradle网址："><a href="#1、gradle网址：" class="headerlink" title="1、gradle网址："></a>1、gradle网址：</h2><p><a target="_blank" rel="noopener" href="http://services.gradle.org/distributions/">http://services.gradle.org/distributions/</a><br>在这个网址可以下载到gradle最新版本</p>
+<h2 id="2、如何修改project的gradle版本"><a href="#2、如何修改project的gradle版本" class="headerlink" title="2、如何修改project的gradle版本"></a><strong>2、如何修改project的gradle版本</strong></h2><p>Gradle Scripts-&gt;gradle-wrapper.properties(Gradle Version)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl&#x3D;https\:&#x2F;&#x2F;services.gradle.org&#x2F;distributions&#x2F;gradle-4.1-milestone-1-all.zip</span><br></pre></td></tr></table></figure>
+
+<p>将gradle-4.1-milestone-1-all修改成gradle最新版本</p>
+<h2 id="3、gradle-zip应该放在哪里"><a href="#3、gradle-zip应该放在哪里" class="headerlink" title="3、gradle*.zip应该放在哪里"></a>3、gradle*.zip应该放在哪里</h2><p>你需要去寻找一下，当你修改Android studio的gradle版本后，加载的是哪个<br>我的gradle在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\用户名\.gradle\wrapper\dists</span><br></pre></td></tr></table></figure>
+
+<p>知道之后，将gradle*.zip放到与*.zip.lck和*.zip.ok同级的目录</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">木落</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://vmythv.github.io/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">https://vmythv.github.io/2020/07/12/2020-07-12-AndroidStudio的安装与使用/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://vmythv.github.io" target="_blank">VmythV's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/AndroidStudio/">AndroidStudio</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"><img class="prev-cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JDK的安装与配置</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/09/2020-07-09-SpringBoot%E6%A1%86%E6%9E%B6/"><img class="next-cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200709215050.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot框架</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/05/16/2020-05-16-Docker安装及教程/" title="Docker安装及教程"><img class="cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200606212553.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-16</div><div class="title">Docker安装及教程</div></div></a></div><div><a href="/2020/07/01/2020-07-01-SSM框架整合/" title="SSM框架整合"><img class="cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200701174303.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-01</div><div class="title">SSM框架整合</div></div></a></div><div><a href="/2020/06/04/2020-06-04-Mybatis教程/" title="SSM框架——Mybatis"><img class="cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200604113429.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-04</div><div class="title">SSM框架——Mybatis</div></div></a></div><div><a href="/2020/07/09/2020-07-09-SpringBoot框架/" title="SpringBoot框架"><img class="cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200709215050.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-09</div><div class="title">SpringBoot框架</div></div></a></div><div><a href="/2020/06/20/2020-06-20-Spring教程/" title="SSM框架——Spring"><img class="cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200620160508.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-20</div><div class="title">SSM框架——Spring</div></div></a></div><div><a href="/2020/06/28/2020-06-28-SpringMVC教程/" title="SSM框架——SpringMVC"><img class="cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200628153034.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-28</div><div class="title">SSM框架——SpringMVC</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">木落</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/VmythV"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/VmythV" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="mailto:1635170329@qq.com" target="_blank" title="Email"><i class="iconfont icon-youxiang"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">忠于自己，活的认真，笑的放肆！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">一、下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">二、安装基础软件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BD%AF%E4%BB%B6%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">三、软件进一步安装设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8D%A2%E5%9B%BD%E5%86%85%E5%AE%89%E8%A3%85%E6%BA%90"><span class="toc-number">4.</span> <span class="toc-text">四、换国内安装源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%AC%AC%E4%B8%80%E4%B8%AAHello-World-%E7%A8%8B%E5%BA%8F"><span class="toc-number">5.</span> <span class="toc-text">五、第一个Hello World 程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">六、安装过程中可能会出现的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81gradle%E7%BD%91%E5%9D%80%EF%BC%9A"><span class="toc-number">6.1.</span> <span class="toc-text">1、gradle网址：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9project%E7%9A%84gradle%E7%89%88%E6%9C%AC"><span class="toc-number">6.2.</span> <span class="toc-text">2、如何修改project的gradle版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81gradle-zip%E5%BA%94%E8%AF%A5%E6%94%BE%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="toc-number">6.3.</span> <span class="toc-text">3、gradle*.zip应该放在哪里</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="JDK的安装与配置"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JDK的安装与配置"/></a><div class="content"><a class="title" href="/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="JDK的安装与配置">JDK的安装与配置</a><time datetime="2020-07-18T10:21:13.000Z" title="发表于 2020-07-18 18:21:13">2020-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Android Studio的安装与使用"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio的安装与使用"/></a><div class="content"><a class="title" href="/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Android Studio的安装与使用">Android Studio的安装与使用</a><time datetime="2020-07-12T08:55:20.000Z" title="发表于 2020-07-12 16:55:20">2020-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/09/2020-07-09-SpringBoot%E6%A1%86%E6%9E%B6/" title="SpringBoot框架"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200709215050.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot框架"/></a><div class="content"><a class="title" href="/2020/07/09/2020-07-09-SpringBoot%E6%A1%86%E6%9E%B6/" title="SpringBoot框架">SpringBoot框架</a><time datetime="2020-07-09T13:27:51.000Z" title="发表于 2020-07-09 21:27:51">2020-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/01/2020-07-01-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" title="SSM框架整合"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200701174303.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架整合"/></a><div class="content"><a class="title" href="/2020/07/01/2020-07-01-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" title="SSM框架整合">SSM框架整合</a><time datetime="2020-07-01T09:32:49.000Z" title="发表于 2020-07-01 17:32:49">2020-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/28/2020-06-28-SpringMVC%E6%95%99%E7%A8%8B/" title="SSM框架——SpringMVC"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200628153034.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架——SpringMVC"/></a><div class="content"><a class="title" href="/2020/06/28/2020-06-28-SpringMVC%E6%95%99%E7%A8%8B/" title="SSM框架——SpringMVC">SSM框架——SpringMVC</a><time datetime="2020-06-28T07:23:28.000Z" title="发表于 2020-06-28 15:23:28">2020-06-28</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/cool-background.png)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 木落</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Because love, So love!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'PKfKCD8iIqb1FFuMzS20QAGi-gzGzoHsz',
+      appKey: 'wi5TxydU9Bu5pcUu8u4T22fT',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

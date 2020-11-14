@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JDK的安装与配置 | VmythV's blog</title><meta name="keywords" content="JDK"><meta name="author" content="木落"><meta name="copyright" content="木落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="前期准备 Oracle官方下载：https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;java&#x2F;technologies&#x2F;oracle-java-archive-downloads.html JDK华为镜像站（支持主流版本）：https:&#x2F;&#x2F;repo.huaweicloud.com&#x2F;java&#x2F;jdk&#x2F; 在官网下载可能要登陆Oracle账户，建议使用镜像站  目前主流使用JDK8，使用本次使用jdk8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK的安装与配置">
+<meta property="og:url" content="https://vmythv.github.io/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="VmythV&#39;s blog">
+<meta property="og:description" content="前期准备 Oracle官方下载：https:&#x2F;&#x2F;www.oracle.com&#x2F;cn&#x2F;java&#x2F;technologies&#x2F;oracle-java-archive-downloads.html JDK华为镜像站（支持主流版本）：https:&#x2F;&#x2F;repo.huaweicloud.com&#x2F;java&#x2F;jdk&#x2F; 在官网下载可能要登陆Oracle账户，建议使用镜像站  目前主流使用JDK8，使用本次使用jdk8">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png">
+<meta property="article:published_time" content="2020-07-18T10:21:13.000Z">
+<meta property="article:modified_time" content="2020-07-18T12:43:12.720Z">
+<meta property="article:author" content="木落">
+<meta property="article:tag" content="JDK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://vmythv.github.io/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"自上次更新后过了太长时间，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-07-18 20:43:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2203988_phpekl1uuza.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">VmythV's blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">JDK的安装与配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-18T10:21:13.000Z" title="发表于 2020-07-18 18:21:13">2020-07-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-07-18T12:43:12.720Z" title="更新于 2020-07-18 20:43:12">2020-07-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><blockquote>
+<p>Oracle官方下载：<a target="_blank" rel="noopener" href="https://www.oracle.com/cn/java/technologies/oracle-java-archive-downloads.html">https://www.oracle.com/cn/java/technologies/oracle-java-archive-downloads.html</a></p>
+<p>JDK华为镜像站（支持主流版本）：<a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/java/jdk/">https://repo.huaweicloud.com/java/jdk/</a></p>
+<p>在官网下载可能要登陆Oracle账户，建议使用镜像站</p>
+</blockquote>
+<p>目前主流使用JDK8，使用本次使用jdk8来做演示。具体版本：jdk-8u202-windows-x64</p>
+<p>还有一种openjdk，个人建议还是安装完整的JDK。</p>
+<h4 id="关于JDK收费问题"><a href="#关于JDK收费问题" class="headerlink" title="关于JDK收费问题"></a><strong>关于JDK收费问题</strong></h4><p>（引用<a target="_blank" rel="noopener" href="https://juejin.im/post/5ccce2006fb9a032143770e4%EF%BC%89">https://juejin.im/post/5ccce2006fb9a032143770e4）</a></p>
+<p>2019年4月16日，Oracle发布了新的JDK 8的更新，版本号为8u211和8u212。与以往不同的是，新版本的许可协议从BCL换成了OTN，这就意味着，你不能在生产环境使用这个版本了。如果你想继续使用8u211/8u212，或者之后发布的新版本，就需要给Oracle交钱了。</p>
+<p>当然，并不是你用了新版本的JDK就要交钱，这个时候要区分私用和商用：</p>
+<p><strong>私用</strong>，是我总结的一个词，它包括”Personal Use”和”Development Use”，前者表示一些个人用途，比方说在自己的电脑上写一些小工具，做一些数据分析等等；后者表示开发用途，比如日常开发、做测试、做演示等等。<strong>商用</strong>不太好界定。我的理解就是拿来赚钱就是商用，比方说把网站部署到生产环境，在公司内部系统使用等。</p>
+<h4 id="我用的JDK使用什么协议？"><a href="#我用的JDK使用什么协议？" class="headerlink" title="我用的JDK使用什么协议？"></a>我用的JDK使用什么协议？</h4><p><strong><a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/terms/license/index.html">BCL</a>**协议，即Oracle Binary Code License Agreement，协议规定你可以使用JDK，但是不能进行修改。私用和商用都可以，但是JDK中的某些商业特性，是需要付费才可以使用的。</strong><a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/terms/license/javase-license.html">OTN</a>**协议，即Oracle Technology Network License Agreement，目前新发布的JDK用的都是这个协议，可以私用，商用需要付费。从下图可以看出各个版本对应的协议:</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718191416.png"></p>
+<h4 id="我不想掏钱怎么办？"><a href="#我不想掏钱怎么办？" class="headerlink" title="我不想掏钱怎么办？"></a>我不想掏钱怎么办？</h4><p>商用的话使用上面BCL协议的版本，私用怎么着都行。很多时候，开发者会对什么版本用了什么协议比较迷惑，懒得搞清楚，那么可以直接使用<a target="_blank" rel="noopener" href="http://openjdk.java.net/">OpenJDK</a>。</p>
+<p>OpenJDK是一个基于GPLv2+CE协议的开源JDK实现，他由OpenJDK社区来运作，作为OpenJDK社区的主导者，Oracle也在尽量减少OpenJDK和Oracle JDK的差别(<a target="_blank" rel="noopener" href="https://blogs.oracle.com/java-platform-group/oracle-jdk-releases-for-java-11-and-later">source</a>)，将一些商业特性移植到了OpenJDK上，比如Java Flight Recorder,Java Mission Control和ZGC等等。对于普通开发者，两者差异可忽略不计。OpenJDK同样会每6个月发布一个新版本，不过每次新的版本发布后，旧的就不维护了，比如OpenJDK 12发布之后，11版本便停止更新，停留在11.0.2版本，没有LTS一说了。</p>
+<p>除了Oracle的OpenJDK，还有很多免费OpenJDK实现可以用，比如 <a target="_blank" rel="noopener" href="https://www.azul.com/downloads/zulu/">Zulu</a>，<a target="_blank" rel="noopener" href="https://adoptopenjdk.net/">AdoptOpenJDK</a>，Amazon的<a target="_blank" rel="noopener" href="https://aws.amazon.com/cn/corretto/">Corretto</a>和阿里巴巴的<a target="_blank" rel="noopener" href="https://github.com/alibaba/dragonwell8">dragonwell</a>等等。具体他们有什么区别，我们以后再说。</p>
+<h4 id="我们大厂愿意掏钱怎么办？"><a href="#我们大厂愿意掏钱怎么办？" class="headerlink" title="我们大厂愿意掏钱怎么办？"></a>我们大厂愿意掏钱怎么办？</h4><p>可以通过订阅Java SE Subscription来付费，桌面用途每人每月2.5刀，服务器用途每个处理器每月25刀，量多还有优惠。Oracle以前还提供Java SE Advanced, Java SE Advanced Desktop和 Java SE Suite等一次性授权，不过现在都建议新老付费用户换成订阅制了。</p>
+<h4 id="Oracle为什么这么做"><a href="#Oracle为什么这么做" class="headerlink" title="Oracle为什么这么做"></a>Oracle为什么这么做</h4><p>当然是赚钱，OTN协议的Oracle JDK现在允许私用也只是想让开发者养成习惯，将来开发者搞公司项目的时候，非常有可能会习惯性去Oracle官网下载JDK，这样就导导致了商用项目未经许可违规使用。Oracle法务部的刀肯定老早就磨好了。</p>
+<h1 id="一、windows系统"><a href="#一、windows系统" class="headerlink" title="一、windows系统"></a>一、windows系统</h1><h2 id="（一）下载JDK"><a href="#（一）下载JDK" class="headerlink" title="（一）下载JDK"></a>（一）下载JDK</h2><p>点击文件，即可下载</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718190904.png"></p>
+<h2 id="（二）安装JDK"><a href="#（二）安装JDK" class="headerlink" title="（二）安装JDK"></a>（二）安装JDK</h2><p>建议在安装之前先新建好要安装的位置，这样以便于管理。</p>
+<p>直接下一步</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718192350.png"></p>
+<p>这里可以点更改来改变安装位置，其他不用动</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718192517.png"></p>
+<p>稍微等待一下</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718192608.png"></p>
+<p>直接点确定</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718192656.png"></p>
+<p>如果在定制安装时没有禁止安装jre，就会在这里安装。建议修改安装路径。</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718192731.png"></p>
+<p>建议在JDK的同级目录新建文件夹<code>jre1.8.0_202</code>,并将jre安装到此位置</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718192910.png"></p>
+<p>然后点下一步</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718193050.png"></p>
+<p>稍等片刻</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718193114.png"></p>
+<p>安装完成后点关闭</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718193242.png"></p>
+<p>至此，JDK安装完毕</p>
+<h2 id="（三）配置JDK"><a href="#（三）配置JDK" class="headerlink" title="（三）配置JDK"></a>（三）配置JDK</h2><p>（1）依次进行以下操作，右键此电脑——&gt;属性——&gt;高级系统设置——&gt;高级——&gt;环境变量</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718193538.png"></p>
+<p>（2）在<code>系统变量</code>新建系统变量</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718193921.png"></p>
+<p><strong>注意点：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME</span><br><span class="line"></span><br><span class="line">D:\JAVA\jdk1.8.0_202</span><br></pre></td></tr></table></figure>
+
+<p>JAVA_HOME一定要大写</p>
+<p>D:\JAVA\jdk1.8.0_202是安装JDK的根路径</p>
+<p>（3）新建CLASSPATH</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718194217.png"></p>
+<p><strong>注意点：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CLASSPATH</span><br><span class="line"></span><br><span class="line">.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</span><br></pre></td></tr></table></figure>
+
+<p>CLASSPATH一定要大写</p>
+<p>下面的变量值的前面有一个英文的点不要丢</p>
+<p>（4）双击系统path，进入编辑环境变量</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718194521.png"></p>
+<p>新建这两个环境变量</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718194644.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%JAVA_HOME%\bin</span><br><span class="line">%JAVA_HOME%\jre\bin</span><br></pre></td></tr></table></figure>
+
+<p>如果你再双击系统path时，出现以行形式编辑，则在变量值末尾添加如下值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</span><br></pre></td></tr></table></figure>
+
+<p>配置完成后，依次确定</p>
+<p>如果在cmd窗口输入java或java -version 显示内容，这安装成功。</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718195024.png"></p>
+<h2 id="（四）总结"><a href="#（四）总结" class="headerlink" title="（四）总结"></a>（四）总结</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">JAVA_HOME</span><br><span class="line">D:\JAVA\jdk1.8.0_202</span><br><span class="line"></span><br><span class="line">CLASSPATH</span><br><span class="line">.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</span><br><span class="line"></span><br><span class="line">Path变量</span><br><span class="line">%JAVA_HOME%\bin</span><br><span class="line">%JAVA_HOME%\jre\bin</span><br><span class="line">或</span><br><span class="line">;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、centos7系统"><a href="#二、centos7系统" class="headerlink" title="二、centos7系统"></a>二、centos7系统</h1><h2 id="（一）下载JDK-1"><a href="#（一）下载JDK-1" class="headerlink" title="（一）下载JDK"></a>（一）下载JDK</h2><p>点击文件，即可下载</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718195853.png"></p>
+<h2 id="（二）检查系统中是否存在JDK"><a href="#（二）检查系统中是否存在JDK" class="headerlink" title="（二）检查系统中是否存在JDK"></a>（二）检查系统中是否存在JDK</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java</span><br><span class="line">rpm -e --nodeps 要卸载的包 (包通过上面的指令可以获取到)]</span><br><span class="line">如：</span><br><span class="line">rpm -e --nodeps java-1.8.0-openjdk-headless-1.8.0.222.b03-1.el7.x86_64</span><br><span class="line">rpm -e --nodeps java-1.7.0-openjdk-headless-1.7.0.221-2.6.18.1.el7.x86_64</span><br><span class="line">rpm:用于管理套件</span><br><span class="line">-e:表示删除指定的套件</span><br><span class="line">-q:使用询问模式，当遇到任何问题时，rpm指令会先询问用户。</span><br><span class="line">-a:查询所有套件。</span><br><span class="line">|:把前一个命令原本要输出到屏幕的数据当作是后一个命令的标准输入</span><br></pre></td></tr></table></figure>
+
+<p>如果有，建议卸载，可能需要root账户</p>
+<p>包含noarch的文件不必删除，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python-javapackages-3.4.1-11.el7.noarch</span><br><span class="line">tzdata-java-2016g-2.el7.noarch</span><br><span class="line">javapackages-tools-3.4.1-11.el7.noarch</span><br></pre></td></tr></table></figure>
+
+<h2 id="（三）上传JDK包"><a href="#（三）上传JDK包" class="headerlink" title="（三）上传JDK包"></a>（三）上传JDK包</h2><p>上传JDK包到/usr/local/software目录下面（/usr/local/software指的是你想要安装JDK的位置）</p>
+<p>执行解压JDK安装文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-8u202-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h2 id="（四）配置环境变量"><a href="#（四）配置环境变量" class="headerlink" title="（四）配置环境变量"></a>（四）配置环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>在文件最末尾加上下面几句话,如下图所示</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/software/jdk1.8.0_202</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/jre/lib/rt.jar:$&#123;JAVA_HOME&#125;/lib/dt.jar:$&#123;JAVA_HOME&#125;/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$&#123;JAVA_HOME&#125;/bin</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718201506.png"></p>
+<p>保存退出</p>
+<p>让配置生效：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>检查环境：</p>
+<p>运行java –version能看到版本信息，就安装成功了，如下图所示：</p>
+<p><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718203411.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">木落</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://vmythv.github.io/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">https://vmythv.github.io/2020/07/18/2020-07-18-JDK的安装与配置/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://vmythv.github.io" target="_blank">VmythV's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JDK/">JDK</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"><img class="next-cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Android Studio的安装与使用</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">木落</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/VmythV"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/VmythV" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="mailto:1635170329@qq.com" target="_blank" title="Email"><i class="iconfont icon-youxiang"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">忠于自己，活的认真，笑的放肆！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EJDK%E6%94%B6%E8%B4%B9%E9%97%AE%E9%A2%98"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">关于JDK收费问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E7%94%A8%E7%9A%84JDK%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E5%8D%8F%E8%AE%AE%EF%BC%9F"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">我用的JDK使用什么协议？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E4%B8%8D%E6%83%B3%E6%8E%8F%E9%92%B1%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">我不想掏钱怎么办？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E5%A4%A7%E5%8E%82%E6%84%BF%E6%84%8F%E6%8E%8F%E9%92%B1%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">我们大厂愿意掏钱怎么办？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Oracle%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%81%9A"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">Oracle为什么这么做</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81windows%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.</span> <span class="toc-text">一、windows系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E4%B8%8B%E8%BD%BDJDK"><span class="toc-number">2.1.</span> <span class="toc-text">（一）下载JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%89%E8%A3%85JDK"><span class="toc-number">2.2.</span> <span class="toc-text">（二）安装JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E9%85%8D%E7%BD%AEJDK"><span class="toc-number">2.3.</span> <span class="toc-text">（三）配置JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E6%80%BB%E7%BB%93"><span class="toc-number">2.4.</span> <span class="toc-text">（四）总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81centos7%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.</span> <span class="toc-text">二、centos7系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E4%B8%8B%E8%BD%BDJDK-1"><span class="toc-number">3.1.</span> <span class="toc-text">（一）下载JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E6%A3%80%E6%9F%A5%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8JDK"><span class="toc-number">3.2.</span> <span class="toc-text">（二）检查系统中是否存在JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E4%B8%8A%E4%BC%A0JDK%E5%8C%85"><span class="toc-number">3.3.</span> <span class="toc-text">（三）上传JDK包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">3.4.</span> <span class="toc-text">（四）配置环境变量</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="JDK的安装与配置"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JDK的安装与配置"/></a><div class="content"><a class="title" href="/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="JDK的安装与配置">JDK的安装与配置</a><time datetime="2020-07-18T10:21:13.000Z" title="发表于 2020-07-18 18:21:13">2020-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Android Studio的安装与使用"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio的安装与使用"/></a><div class="content"><a class="title" href="/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Android Studio的安装与使用">Android Studio的安装与使用</a><time datetime="2020-07-12T08:55:20.000Z" title="发表于 2020-07-12 16:55:20">2020-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/09/2020-07-09-SpringBoot%E6%A1%86%E6%9E%B6/" title="SpringBoot框架"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200709215050.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot框架"/></a><div class="content"><a class="title" href="/2020/07/09/2020-07-09-SpringBoot%E6%A1%86%E6%9E%B6/" title="SpringBoot框架">SpringBoot框架</a><time datetime="2020-07-09T13:27:51.000Z" title="发表于 2020-07-09 21:27:51">2020-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/01/2020-07-01-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" title="SSM框架整合"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200701174303.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架整合"/></a><div class="content"><a class="title" href="/2020/07/01/2020-07-01-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" title="SSM框架整合">SSM框架整合</a><time datetime="2020-07-01T09:32:49.000Z" title="发表于 2020-07-01 17:32:49">2020-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/28/2020-06-28-SpringMVC%E6%95%99%E7%A8%8B/" title="SSM框架——SpringMVC"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200628153034.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架——SpringMVC"/></a><div class="content"><a class="title" href="/2020/06/28/2020-06-28-SpringMVC%E6%95%99%E7%A8%8B/" title="SSM框架——SpringMVC">SSM框架——SpringMVC</a><time datetime="2020-06-28T07:23:28.000Z" title="发表于 2020-06-28 15:23:28">2020-06-28</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/cool-background.png)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 木落</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Because love, So love!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'PKfKCD8iIqb1FFuMzS20QAGi-gzGzoHsz',
+      appKey: 'wi5TxydU9Bu5pcUu8u4T22fT',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

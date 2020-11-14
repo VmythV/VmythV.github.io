@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MySQL5.7解压版安装教程 | VmythV's blog</title><meta name="keywords" content="mysql"><meta name="author" content="木落"><meta name="copyright" content="木落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="MySQL5.7解压版安装教程 为什么要写关于MySQL5.7的安装教程？ 1.目前大多使用的就是MySQL5.7版本的数据库，8.0的太新，5.5的太旧。 2.因为在MySQL5.5版有个非常好的配置字符集的exe文件MySQLInstanceConfig.exe，但新版没有，就只能用zip版安装再配置，这也是个人感觉不是很好的地方。  零、卸载MySQL卸载前一定要备份数据哦~    1、检查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL5.7解压版安装教程">
+<meta property="og:url" content="https://vmythv.github.io/2020/05/07/2020-05-07-MySQL57%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="VmythV&#39;s blog">
+<meta property="og:description" content="MySQL5.7解压版安装教程 为什么要写关于MySQL5.7的安装教程？ 1.目前大多使用的就是MySQL5.7版本的数据库，8.0的太新，5.5的太旧。 2.因为在MySQL5.5版有个非常好的配置字符集的exe文件MySQLInstanceConfig.exe，但新版没有，就只能用zip版安装再配置，这也是个人感觉不是很好的地方。  零、卸载MySQL卸载前一定要备份数据哦~    1、检查">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/myth1314/photo/raw/master/img/20200606221654.png">
+<meta property="article:published_time" content="2020-05-07T07:43:00.000Z">
+<meta property="article:modified_time" content="2020-11-14T12:03:59.348Z">
+<meta property="article:author" content="木落">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/myth1314/photo/raw/master/img/20200606221654.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://vmythv.github.io/2020/05/07/2020-05-07-MySQL57%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"自上次更新后过了太长时间，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-14 20:03:59'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2203988_phpekl1uuza.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/20200606221654.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">VmythV's blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">MySQL5.7解压版安装教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-05-07T07:43:00.000Z" title="发表于 2020-05-07 15:43:00">2020-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-14T12:03:59.348Z" title="更新于 2020-11-14 20:03:59">2020-11-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MySQL5-7解压版安装教程"><a href="#MySQL5-7解压版安装教程" class="headerlink" title="MySQL5.7解压版安装教程"></a>MySQL5.7解压版安装教程</h1><blockquote>
+<p>为什么要写关于MySQL5.7的安装教程？</p>
+<p>1.目前大多使用的就是MySQL5.7版本的数据库，8.0的太新，5.5的太旧。</p>
+<p>2.因为在MySQL5.5版有个非常好的配置字符集的exe文件<strong>MySQLInstanceConfig.exe</strong>，但新版没有，就只能用zip版安装再配置，这也是个人感觉不是很好的地方。</p>
+</blockquote>
+<h2 id="零、卸载MySQL"><a href="#零、卸载MySQL" class="headerlink" title="零、卸载MySQL"></a>零、卸载MySQL</h2><div class="note danger flat"><p>卸载前一定要备份数据哦~ </p>
+</div>
+
+<p>1、检查mysql的服务是否正在运行</p>
+<p>（1）方式一：<br>启动任务管理–&gt;服务–&gt;mysql服务</p>
+<p>（2）方式二<br>我的电脑（计算机）–&gt;右键–&gt;管理–&gt;服务</p>
+<p>2、卸载<br>方式一：控制面板<br>方式二：电脑管家或360安全卫士<br>方式三：用安装程序自带的卸载程序</p>
+<p>3、清理遗留文件</p>
+<p>①找到之前的安装目录，清理</p>
+<p>如果你是默认安装的，要注意，mysql的默认的数据目录，是在一个隐藏文件夹中：C:\ProgramData\MySQL</p>
+<p>②到mysql的安装目录，一般在C:\Program Files（x86），将mysql相关文件夹删除；</p>
+<p>③如果部分mysql相关文件安装在其他盘里，记得去清理一下，一般直接点击右键删除即可，实在删除不了，用360粉碎，或者重启下电脑再删除；</p>
+<p>④删除系统盘下（C盘）ProgramData目录下的mysql相关目录，ProgramData目录系统是默认隐藏的，可通过如下办法——在“隐藏的项目”前打上对勾，显示系统隐藏的目录；</p>
+<p>⑤删除C盘Users下相关文件——C:\Users\（用户名）\AppData目录下每一个文件夹里都找找MySQL文件名，并删除；</p>
+<p>4、清理注册表</p>
+<p>通过快捷键 “win+R” 进入”运 行”框，然后输入<strong>regedit</strong>进入注册表编辑器</p>
+<p>1.在编辑器里，点击上方工具栏：编辑——查找——输入mysql进行查找，查找到的mysql相关的统统删除；</p>
+<p>2.</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL服务 目录删除</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\MySQL服务 目录删除</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\MySQL服务 目录删除</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\MySQL服务 目录删除</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL服务目录删除</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MySQL服务删除</span><br><span class="line">注册表中的ControlSet001,ControlSet002,不一定是<span class="number">001</span>和<span class="number">002</span>,可能是ControlSet005、<span class="number">006</span>之类	</span><br></pre></td></tr></table></figure>
+
+<h2 id="一、解压MySQL5-7"><a href="#一、解压MySQL5-7" class="headerlink" title="一、解压MySQL5.7"></a>一、解压MySQL5.7</h2><p>从网上下载zip版的myql，并解压。</p>
+<h2 id="二、配置环境变量"><a href="#二、配置环境变量" class="headerlink" title="二、配置环境变量"></a>二、配置环境变量</h2><p>1.右键《我的电脑》——&gt;《属性》——&gt;《高级系统设置》——&gt;《高级》——&gt;《环境变量》</p>
+<p>2.在path中添加mysql解压缩中bin的位置：例如：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">mysql</span>-5.7.30\<span class="title">bin</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、创建my-ini配置文件并填写配置信息"><a href="#三、创建my-ini配置文件并填写配置信息" class="headerlink" title="三、创建my.ini配置文件并填写配置信息"></a>三、创建my.ini配置文件并填写配置信息</h2><p>首先创建一个.txt文件即可，修改文件名和后缀为my.ini，修改保存后打开使用记事本打开该配置文件填写如下信息：（复制修改注意事项后的路径即可！）</p>
+<p>编辑好my.ini文件之后，将my.ini文件放到mysql的解压本地路径下C:\Program Files\mysql-5.7.30目录下（我这里是安装在了自己的E盘下！大家根据自己情况安装即可！）</p>
+<p><strong>注意：basedir和datadir填写自己将mysql解压后的文件路径！</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[mysql]  </span><br><span class="line"># 设置 mysql 客户端默认字符集  </span><br><span class="line">default-character-<span class="built_in">set</span>=utf8 </span><br><span class="line"> </span><br><span class="line">[mysqld]  </span><br><span class="line">#设置 <span class="number">3306</span> 端口  </span><br><span class="line">port = <span class="number">3306</span>  </span><br><span class="line"></span><br><span class="line"># 设置 mysql 的安装目录  </span><br><span class="line">basedir=C:\Program Files\mysql-<span class="number">5</span>.<span class="number">7</span>.<span class="number">30</span></span><br><span class="line"></span><br><span class="line"># 设置 mysql 数据库的数据的存放目录</span><br><span class="line">datadir=C:\Program Files\mysql-<span class="number">5</span>.<span class="number">7</span>.<span class="number">30</span>\data </span><br><span class="line"></span><br><span class="line"># 允许最大连接数  </span><br><span class="line">max_connections=<span class="number">200</span>  </span><br><span class="line"></span><br><span class="line"># 服务端使用的字符集默认为 <span class="number">8</span> 比特编码的 latin1 字符集  </span><br><span class="line">character-<span class="built_in">set</span>-server=utf8  </span><br><span class="line"></span><br><span class="line"># 创建新表时将使用的默认存储引擎  </span><br><span class="line">default-storage-engine=INNODB</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、CMD命令窗口安装MySQL服务"><a href="#四、CMD命令窗口安装MySQL服务" class="headerlink" title="四、CMD命令窗口安装MySQL服务"></a>四、CMD命令窗口安装MySQL服务</h2><p><strong>注意：一定要使用管理员身份打开DOS命令窗口</strong></p>
+<p>1.进入解压后MySQL的 bin 文件夹内。如果路径中，某文件夹含有空格，需要加上 “”</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> C:\Program Files\mysql-<span class="number">5</span>.<span class="number">7</span>.<span class="number">30</span>\bin</span><br></pre></td></tr></table></figure>
+
+<p>2.初始化data目录（即默认数据库）。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize-insecure --user=mysql</span><br></pre></td></tr></table></figure>
+
+<p>3.安装MySQL服务(后面可接服务名称，建议区分)</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld -install MySQL57</span><br></pre></td></tr></table></figure>
+
+<p>4.启动MySQL服务。中间会经过正在启动，然后提示MySQL服务已经启动成功。表示启动服务成功！</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> mysql57</span><br></pre></td></tr></table></figure>
+
+<p>5.初始化MySQL用户名和密码（输入以下命令后会显示Enter password：让你输入密码，此时我们没有设置密码，直接回车即可登录！）</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>6.登录后修改密码（’123456’是我的新密码，你们的密码可自行设置！注意：单引号和分号必须都有）</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;<span class="number">123456</span>&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>7.刷新权限</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p>8.查看数据库的编码字符集（除了第四项其他都是utf8为我们需要的配置！）</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like &#x27;character%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>就个人安装体验来看，如果只是图方便，使用installer安装较方便，但缺点是后期需要更改字符集</p>
+<p>若想完全安装，可以选择zip版安装，但缺点是需要编写my.ini文件</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">木落</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://vmythv.github.io/2020/05/07/2020-05-07-MySQL57%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">https://vmythv.github.io/2020/05/07/2020-05-07-MySQL57解压版安装教程/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://vmythv.github.io" target="_blank">VmythV's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/mysql/">mysql</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/myth1314/photo/raw/master/img/20200606221654.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/05/16/2020-05-16-Docker%E5%AE%89%E8%A3%85%E5%8F%8A%E6%95%99%E7%A8%8B/"><img class="prev-cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200606212553.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Docker安装及教程</div></div></a></div><div class="next-post pull-right"><a href="/2020/05/04/2020-05-04-Java%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="https://gitee.com/myth1314/photo/raw/master/img/20200616144953.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java基础笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">木落</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/VmythV"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/VmythV" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="mailto:1635170329@qq.com" target="_blank" title="Email"><i class="iconfont icon-youxiang"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">忠于自己，活的认真，笑的放肆！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL5-7%E8%A7%A3%E5%8E%8B%E7%89%88%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">MySQL5.7解压版安装教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E3%80%81%E5%8D%B8%E8%BD%BDMySQL"><span class="toc-number">1.1.</span> <span class="toc-text">零、卸载MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%A7%A3%E5%8E%8BMySQL5-7"><span class="toc-number">1.2.</span> <span class="toc-text">一、解压MySQL5.7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">二、配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%9B%E5%BB%BAmy-ini%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%B9%B6%E5%A1%AB%E5%86%99%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.4.</span> <span class="toc-text">三、创建my.ini配置文件并填写配置信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81CMD%E5%91%BD%E4%BB%A4%E7%AA%97%E5%8F%A3%E5%AE%89%E8%A3%85MySQL%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.5.</span> <span class="toc-text">四、CMD命令窗口安装MySQL服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">五、总结</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="JDK的安装与配置"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200718183342.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JDK的安装与配置"/></a><div class="content"><a class="title" href="/2020/07/18/2020-07-18-JDK%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" title="JDK的安装与配置">JDK的安装与配置</a><time datetime="2020-07-18T10:21:13.000Z" title="发表于 2020-07-18 18:21:13">2020-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Android Studio的安装与使用"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200712165854.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio的安装与使用"/></a><div class="content"><a class="title" href="/2020/07/12/2020-07-12-AndroidStudio%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="Android Studio的安装与使用">Android Studio的安装与使用</a><time datetime="2020-07-12T08:55:20.000Z" title="发表于 2020-07-12 16:55:20">2020-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/09/2020-07-09-SpringBoot%E6%A1%86%E6%9E%B6/" title="SpringBoot框架"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200709215050.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot框架"/></a><div class="content"><a class="title" href="/2020/07/09/2020-07-09-SpringBoot%E6%A1%86%E6%9E%B6/" title="SpringBoot框架">SpringBoot框架</a><time datetime="2020-07-09T13:27:51.000Z" title="发表于 2020-07-09 21:27:51">2020-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/01/2020-07-01-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" title="SSM框架整合"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200701174303.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架整合"/></a><div class="content"><a class="title" href="/2020/07/01/2020-07-01-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" title="SSM框架整合">SSM框架整合</a><time datetime="2020-07-01T09:32:49.000Z" title="发表于 2020-07-01 17:32:49">2020-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/06/28/2020-06-28-SpringMVC%E6%95%99%E7%A8%8B/" title="SSM框架——SpringMVC"><img src="https://gitee.com/myth1314/photo/raw/master/img/20200628153034.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSM框架——SpringMVC"/></a><div class="content"><a class="title" href="/2020/06/28/2020-06-28-SpringMVC%E6%95%99%E7%A8%8B/" title="SSM框架——SpringMVC">SSM框架——SpringMVC</a><time datetime="2020-06-28T07:23:28.000Z" title="发表于 2020-06-28 15:23:28">2020-06-28</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/cool-background.png)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 木落</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Because love, So love!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'PKfKCD8iIqb1FFuMzS20QAGi-gzGzoHsz',
+      appKey: 'wi5TxydU9Bu5pcUu8u4T22fT',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
