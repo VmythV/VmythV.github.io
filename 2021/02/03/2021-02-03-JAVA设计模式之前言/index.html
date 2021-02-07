@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JAVA设计模式之前言 | VmythV's blog</title><meta name="keywords" content="设计模式"><meta name="author" content="木落"><meta name="copyright" content="木落"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、什么是设计模式设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的，设计模式使代码编制真正工程化，设计模式是软件工程的基石，如同大厦的一块块砖石一样。项目中合理的运用设计模式可以完美的解决很多问题，每种模式在现在中都有相应的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA设计模式之前言">
+<meta property="og:url" content="https://vmythv.github.io/2021/02/03/2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80/index.html">
+<meta property="og:site_name" content="VmythV&#39;s blog">
+<meta property="og:description" content="一、什么是设计模式设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的，设计模式使代码编制真正工程化，设计模式是软件工程的基石，如同大厦的一块块砖石一样。项目中合理的运用设计模式可以完美的解决很多问题，每种模式在现在中都有相应的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/myth1314/photo/raw/master/img/20210203210413.png">
+<meta property="article:published_time" content="2021-02-03T13:01:17.000Z">
+<meta property="article:modified_time" content="2021-02-07T14:05:50.052Z">
+<meta property="article:author" content="木落">
+<meta property="article:tag" content="设计模式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/myth1314/photo/raw/master/img/20210203210413.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://vmythv.github.io/2021/02/03/2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"自上次更新后过了太长时间，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-02-07 22:05:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2203988_phpekl1uuza.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/20210203210413.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">VmythV's blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/talk/"><i class="fa-fw iconfont icon-41shuoshuo"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">JAVA设计模式之前言</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-03T13:01:17.000Z" title="发表于 2021-02-03 21:01:17">2021-02-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-07T14:05:50.052Z" title="更新于 2021-02-07 22:05:50">2021-02-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/java/">java</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/java/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一、什么是设计模式"><a href="#一、什么是设计模式" class="headerlink" title="一、什么是设计模式"></a>一、什么是设计模式</h1><p>设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的，设计模式使代码编制真正工程化，设计模式是软件工程的基石，如同大厦的一块块砖石一样。项目中合理的运用设计模式可以完美的解决很多问题，每种模式在现在中都有相应的原理来与之对应，每一个模式描述了一个在我们周围不断重复发生的问题，以及该问题的核心解决方案，这也是它能被广泛应用的原因。简单说：</p>
+<p><strong>模式：在某些场景下，针对某类问题的某种通用的解决方案。</strong></p>
+<p>场景：项目所在的环境</p>
+<p>问题：约束条件，项目目标等</p>
+<p>解决方案：通用、可复用的设计，解决约束达到目标。</p>
+<p>代码同步更新到github仓库：<a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern">https://github.com/VmythV/DesignPattern</a></p>
+<h1 id="二、设计模式七大原则"><a href="#二、设计模式七大原则" class="headerlink" title="二、设计模式七大原则"></a>二、设计模式七大原则</h1><h2 id="2-1-设计模式的目的"><a href="#2-1-设计模式的目的" class="headerlink" title="2.1 设计模式的目的"></a>2.1 设计模式的目的</h2><p>编写软件过程中，程序员面临着来自 耦合性，内聚性以及可维护性，可扩展性，重用性，灵活性 等多方面的挑战，设计模式是为了让程序(软件)，具有更好</p>
+<ol>
+<li><p>  代码重用性 (即：相同功能的代码，不用多次编写)</p>
+</li>
+<li><p>  可读性 (即：编程规范性, 便于其他程序员的阅读和理解)</p>
+</li>
+<li><p>  可扩展性 (即：当需要增加新的功能时，非常的方便，称为可维护)</p>
+</li>
+<li><p>  可靠性 (即：当我们增加新的功能后，对原来的功能没有影响)</p>
+</li>
+<li><p>  使程序呈现高内聚，低耦合的特性</p>
+</li>
+</ol>
+<h2 id="2-2-设计模式七大原则"><a href="#2-2-设计模式七大原则" class="headerlink" title="2.2 设计模式七大原则"></a>2.2 设计模式七大原则</h2><p>设计模式原则，其实就是程序员在编程时，应当遵守的原则，也是各种设计模式的基础(即：设计模式为什么这样设计的依据)</p>
+<p>设计模式常用的七大原则有:</p>
+<ol>
+<li><p>  单一职责原则（SingleResponsibility）</p>
+</li>
+<li><p>  接口隔离原则（Interface Segregation Principle）</p>
+</li>
+<li><p>  依赖倒转(倒置)原则（Dependence Inversion Principle）</p>
+</li>
+<li><p>  里氏替换原则（Liskov Substitution Principle）</p>
+</li>
+<li><p>  开闭原则（Open Close Principle）</p>
+</li>
+<li><p>  迪米特法则(最少知道原则)（Demeter Principle）</p>
+</li>
+<li><p>  合成复用原则（Composite Reuse Principle）</p>
+</li>
+</ol>
+<h2 id="2-3-单一职责原则（SingleResponsibility）"><a href="#2-3-单一职责原则（SingleResponsibility）" class="headerlink" title="2.3 单一职责原则（SingleResponsibility）"></a>2.3 单一职责原则（SingleResponsibility）</h2><h3 id="2-1-1-基本介绍"><a href="#2-1-1-基本介绍" class="headerlink" title="2.1.1 基本介绍"></a>2.1.1 基本介绍</h3><p>对类来说的，即一个类应该只负责一项职责。如类 A 负责两个不同职责：职责 1，职责 2。当职责 1 需求变更而改变 A 时，可能造成职责 2 执行错误，所以需要将类 A 的粒度分解为 A1，A2</p>
+<h3 id="2-1-2-应用实例"><a href="#2-1-2-应用实例" class="headerlink" title="2.1.2 应用实例"></a>2.1.2 应用实例</h3><p>交通工具</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/tree/master/DP01principle/src/SingleResponsibility">https://github.com/VmythV/DesignPattern/tree/master/DP01principle/src/SingleResponsibility</a></p>
+<h3 id="2-1-3-单一职责原则注意事项和细节"><a href="#2-1-3-单一职责原则注意事项和细节" class="headerlink" title="2.1.3 单一职责原则注意事项和细节"></a>2.1.3 单一职责原则注意事项和细节</h3><ol>
+<li><p>  降低类的复杂度，一个类只负责一项职责。</p>
+</li>
+<li><p>  提高类的可读性，可维护性</p>
+</li>
+<li><p>  降低变更引起的风险</p>
+</li>
+<li><p>  通常情况下，我们应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违反单一职责原则；只有类中方法数量足够少，可以在方法级别保持单一职责原则</p>
+</li>
+</ol>
+<h2 id="2-4-接口隔离原则（Interface-Segregation-Principle）"><a href="#2-4-接口隔离原则（Interface-Segregation-Principle）" class="headerlink" title="2.4 接口隔离原则（Interface Segregation Principle）"></a>2.4 接口隔离原则（Interface Segregation Principle）</h2><h3 id="2-4-1-基本介绍"><a href="#2-4-1-基本介绍" class="headerlink" title="2.4.1 基本介绍"></a>2.4.1 基本介绍</h3><ol>
+<li><p>  客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立在最小的接口上</p>
+</li>
+<li><p>  先看一张图:</p>
+</li>
+</ol>
+<p><img src="2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80.assets/20210204151709.png"></p>
+<ol start="3">
+<li>  类 A 通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类 D，如果接口 Interface1 对于类 A 和类 C</li>
+</ol>
+<p>来说不是最小接口，那么类 B 和类 D 必须去实现他们不需要的方法。</p>
+<ol start="4">
+<li>  按隔离原则应当这样处理：</li>
+</ol>
+<p>将接口 <strong>Interface1</strong> 拆分为独立的几个接口**(<strong>这里我们拆分成 **3</strong> 个接口**)**，类 A 和类 C 分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则</p>
+<h3 id="2-4-2-应用实例"><a href="#2-4-2-应用实例" class="headerlink" title="2.4.2 应用实例"></a>2.4.2 应用实例</h3><ol>
+<li>   类 A 通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类 D，请编写代码完成此应用实例。</li>
+</ol>
+<p>代码实现：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/interfacesegregation/segregation1.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/interfacesegregation/segregation1.java</a></p>
+<h3 id="2-4-3-应传统方法的问题和使用接口隔离原则改进"><a href="#2-4-3-应传统方法的问题和使用接口隔离原则改进" class="headerlink" title="2.4.3 应传统方法的问题和使用接口隔离原则改进"></a>2.4.3 应传统方法的问题和使用接口隔离原则改进</h3><ol>
+<li>   类 A 通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类 D，如果接口 Interface1 对于类 A 和类 C</li>
+</ol>
+<p>来说不是最小接口，那么类 B 和类 D 必须去实现他们不需要的方法</p>
+<ol start="2">
+<li><p>   将接口 <strong>Interface1</strong> 拆分为独立的几个接口，类 A 和类 C 分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则</p>
+</li>
+<li><p>   接口 Interface1 中出现的方法，根据实际情况拆分为三个接口</p>
+</li>
+</ol>
+<p><img src="2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80.assets/20210204161419.png"></p>
+<p>代码实现：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/interfacesegregation/improve/segregation2.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/interfacesegregation/improve/segregation2.java</a></p>
+<h2 id="2-5-依赖倒转原则（Dependence-Inversion-Principle）"><a href="#2-5-依赖倒转原则（Dependence-Inversion-Principle）" class="headerlink" title="2.5 依赖倒转原则（Dependence Inversion Principle）"></a>2.5 依赖倒转原则（Dependence Inversion Principle）</h2><h3 id="2-5-1-基本介绍"><a href="#2-5-1-基本介绍" class="headerlink" title="2.5.1 基本介绍"></a>2.5.1 基本介绍</h3><p>依赖倒转原则(Dependence Inversion Principle)是指：</p>
+<ol>
+<li><p>  高层模块不应该依赖低层模块，二者都应该依赖其抽象</p>
+</li>
+<li><p>  抽象不应该依赖细节，细节应该依赖抽象</p>
+</li>
+<li><p>  依赖倒转(倒置)的中心思想是面向接口编程</p>
+</li>
+<li><p>  依赖倒转原则是基于这样的设计理念：相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建的架构比以细节为基础的架构要稳定的多。在 java 中，抽象指的是接口或抽象类，细节就是具体的实现类</p>
+</li>
+<li><p>  使用接口或抽象类的目的是制定好规范，而不涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成</p>
+</li>
+</ol>
+<h3 id="2-5-2-应用实例"><a href="#2-5-2-应用实例" class="headerlink" title="2.5.2 应用实例"></a>2.5.2 应用实例</h3><p>请编程完成 Person 接收消息 的功能。</p>
+<p>实现方案</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/DependenceInversion/DependenceInversion.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/DependenceInversion/DependenceInversion.java</a></p>
+<p>改进</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/DependenceInversion/improve/DependenceInversion.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/DependenceInversion/improve/DependenceInversion.java</a></p>
+<h3 id="2-5-3-依赖关系传递的三种方式和应用案例"><a href="#2-5-3-依赖关系传递的三种方式和应用案例" class="headerlink" title="2.5.3 依赖关系传递的三种方式和应用案例"></a>2.5.3 依赖关系传递的三种方式和应用案例</h3><ol>
+<li><p>  接口传递</p>
+</li>
+<li><p>  构造方法传递</p>
+</li>
+<li><p>  setter 方式传递</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/DependenceInversion/improve/DependencyPass.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/DependenceInversion/improve/DependencyPass.java</a></p>
+<h3 id="2-5-4-依赖倒转原则的注意事项和细节"><a href="#2-5-4-依赖倒转原则的注意事项和细节" class="headerlink" title="2.5.4 依赖倒转原则的注意事项和细节"></a>2.5.4 依赖倒转原则的注意事项和细节</h3><ol>
+<li><p>  低层模块尽量都要有抽象类或接口，或者两者都有，程序稳定性更好.</p>
+</li>
+<li><p>  变量的声明类型尽量是抽象类或接口, 这样我们的变量引用和实际对象间，就存在一个缓冲层，利于程序扩展和优化</p>
+</li>
+<li><p>  继承时遵循里氏替换原则</p>
+</li>
+</ol>
+<h2 id="2-6-里氏替换原则-Liskov-Substitution-Principle"><a href="#2-6-里氏替换原则-Liskov-Substitution-Principle" class="headerlink" title="2.6 里氏替换原则(Liskov Substitution Principle)"></a>2.6 里氏替换原则(Liskov Substitution Principle)</h2><h3 id="2-6-1-OO-中的继承性的思考和说明"><a href="#2-6-1-OO-中的继承性的思考和说明" class="headerlink" title="2.6.1 OO 中的继承性的思考和说明"></a>2.6.1 OO 中的继承性的思考和说明</h3><ol>
+<li><pre><code>继承包含这样一层含义：父类中凡是已经实现好的方法，实际上是在设定规范和契约，虽然它不强制要求所有的子类必须遵循这些契约，但是如果子类对这些已经实现的方法任意修改，就会对整个继承体系造成破坏。</code></pre>
+</li>
+<li><pre><code>继承在给程序设计带来便利的同时，也带来了弊端。比如使用继承会给程序带来侵入性，程序的可移植性降低， 增加对象间的耦合性，如果一个类被其他的类所继承，则当这个类需要修改时，必须考虑到所有的子类，并且父类修改后，所有涉及到子类的功能都有可能产生故障</code></pre>
+</li>
+<li><pre><code>问题提出：在编程中，如何正确的使用继承? =&gt; 里氏替换原则</code></pre>
+</li>
+</ol>
+<h3 id="2-6-2-基本介绍"><a href="#2-6-2-基本介绍" class="headerlink" title="2.6.2 基本介绍"></a>2.6.2 基本介绍</h3><ol>
+<li><p>   里氏替换原则(Liskov Substitution Principle)在 1988 年，由麻省理工学院的以为姓里的女士提出的。</p>
+</li>
+<li><p>   如果对每个类型为 T1 的对象 o1，都有类型为 T2 的对象 o2，使得以 T1 定义的所有程序 P 在所有的对象 o1 都代换成 o2 时，程序 P 的行为没有发生变化，那么类型 T2 是类型 T1 的子类型。换句话说，所有引用基类的地方必须能透明地使用其子类的对象。</p>
+</li>
+<li><p>   在使用继承时，遵循里氏替换原则，在子类中尽量不要重写父类的方法</p>
+</li>
+<li><p>   里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖 来解决问题。</p>
+</li>
+</ol>
+<h3 id="2-6-3-一个程序引出的问题和思考"><a href="#2-6-3-一个程序引出的问题和思考" class="headerlink" title="2.6.3 一个程序引出的问题和思考"></a>2.6.3 一个程序引出的问题和思考</h3><p>该看个程序, 思考下问题和解决思路</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> LiskovSubstitution;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> myth</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2021-02-05 18:03:50</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Liskov</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        A a = <span class="keyword">new</span> A();</span><br><span class="line">        System.out.println(<span class="string">&quot;11-3=&quot;</span> + a.func1(<span class="number">11</span>, <span class="number">3</span>));</span><br><span class="line">        System.out.println(<span class="string">&quot;1-8=&quot;</span> + a.func1(<span class="number">1</span>, <span class="number">8</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        B b = <span class="keyword">new</span> B();</span><br><span class="line">        System.out.println(<span class="string">&quot;11-3=&quot;</span> + b.func1(<span class="number">11</span>, <span class="number">3</span>));<span class="comment">//这里本意是求出 11-3,由于重写了方法func1，导致出错</span></span><br><span class="line">        System.out.println(<span class="string">&quot;1-8=&quot;</span> + b.func1(<span class="number">1</span>, <span class="number">8</span>));<span class="comment">// 1-8</span></span><br><span class="line">        System.out.println(<span class="string">&quot;11+3+9=&quot;</span> + b.func2(<span class="number">11</span>, <span class="number">3</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A 类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 返回两个数的差</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> num1, <span class="keyword">int</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num1 - num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// B 类继承了 A</span></span><br><span class="line"><span class="comment">// 增加了一个新功能：完成两个数相加,然后和 9 求和</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这里，重写了 A 类的方法,  可能是无意识</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//完成两个数相加,然后和 9 求和</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">func2</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> func1(a, b) + <span class="number">9</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6-4-解决方法"><a href="#2-6-4-解决方法" class="headerlink" title="2.6.4 解决方法"></a>2.6.4 解决方法</h3><ol>
+<li><p> 我们发现原来运行正常的相减功能发生了错误。原因就是类 B 无意中重写了父类的方法，造成原有功能出现错误。在实际编程中，我们常常会通过重写父类的方法完成新的功能，这样写起来虽然简单，但整个继承体系的复用性会比较差。特别是运行多态比较频繁的时候</p>
+</li>
+<li><p> 通用的做法是：原来的父类和子类都继承一个更通俗的基类，原有的继承关系去掉，采用依赖，聚合，组合等关系代替.</p>
+</li>
+<li><p> 改进方案</p>
+</li>
+</ol>
+<p><img src="2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80.assets/20210205180822.png"></p>
+<p>A类和B类都继承Base类，如果B中想要用到A类中的方法，则采用依赖等关系。</p>
+<p>代码实现</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/LiskovSubstitution/improve/Liskov.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/LiskovSubstitution/improve/Liskov.java</a></p>
+<h2 id="2-7-开闭原则（Open-Close-Principle）"><a href="#2-7-开闭原则（Open-Close-Principle）" class="headerlink" title="2.7 开闭原则（Open Close Principle）"></a>2.7 开闭原则（Open Close Principle）</h2><h3 id="2-7-1-基本介绍"><a href="#2-7-1-基本介绍" class="headerlink" title="2.7.1 基本介绍"></a>2.7.1 基本介绍</h3><ol>
+<li><p>  开闭原则（Open Closed Principle）是编程中最基础、最重要的设计原则</p>
+</li>
+<li><p>  一个软件实体如类，模块和函数应该对扩展开放**(<strong>对提供方</strong>)<strong>，对修改关闭</strong>(<strong>对使用方</strong>)**。用抽象构建框架，用实现扩展细节。</p>
+</li>
+<li><p>  当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化。</p>
+</li>
+<li><p>  编程中遵循其它原则，以及使用设计模式的目的就是遵循开闭原则。</p>
+</li>
+</ol>
+<h3 id="2-7-2-看下面一段代码"><a href="#2-7-2-看下面一段代码" class="headerlink" title="2.7.2 看下面一段代码"></a>2.7.2 看下面一段代码</h3><p>看一个画图形的功能。</p>
+<p>类图设计，如下:</p>
+<p><img src="2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80.assets/20210206163112.png"></p>
+<p>代码实现</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/OpenClose/Ocp.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/OpenClose/Ocp.java</a></p>
+<h3 id="2-7-3-方式-1-的优缺点"><a href="#2-7-3-方式-1-的优缺点" class="headerlink" title="2.7.3 方式 1 的优缺点"></a>2.7.3 方式 1 的优缺点</h3><ol>
+<li><p>  优点是比较好理解，简单易操作。</p>
+</li>
+<li><p>  缺点是违反了设计模式的 ocp 原则，即对扩展开放(提供方)，对修改关闭(使用方)。即当我们给类增加新功能的时候，尽量不修改代码，或者尽可能少修改代码.</p>
+</li>
+<li><p>  比如我们这时要新增加一个图形种类 三角形，我们需要做如下修改，修改的地方较多</p>
+</li>
+</ol>
+<h3 id="2-7-4-改进的思路分析"><a href="#2-7-4-改进的思路分析" class="headerlink" title="2.7.4 改进的思路分析"></a>2.7.4 改进的思路分析</h3><p>思路：把创建 <strong>Shape</strong> 类做成抽象类，并提供一个抽象的 <strong>draw</strong> 方法，让子类去实现即可，这样我们有新的图形种类时，只需要让新的图形类继承 Shape，并实现 draw 方法即可，使用方的代码就不需要修改，满足了开闭原则</p>
+<p>改进后的代码：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/OpenClose/improve/Ocp.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/OpenClose/improve/Ocp.java</a></p>
+<h2 id="2-8-迪米特法则（Demeter-Principle）"><a href="#2-8-迪米特法则（Demeter-Principle）" class="headerlink" title="2.8 迪米特法则（Demeter Principle）"></a>2.8 迪米特法则（Demeter Principle）</h2><h3 id="2-8-1-基本介绍"><a href="#2-8-1-基本介绍" class="headerlink" title="2.8.1 基本介绍"></a>2.8.1 基本介绍</h3><ol>
+<li><p>  一个对象应该对其他对象保持最少的了解</p>
+</li>
+<li><p>  类与类关系越密切，耦合度越大</p>
+</li>
+<li><p>  迪米特法则(Demeter Principle)又叫最少知道原则，即一个类对自己依赖的类知道的越少越好。也就是说，对于被依赖的类不管多么复杂，都尽量将逻辑封装在类的内部。对外除了提供的 public 方法，不对外泄露任何信息</p>
+</li>
+<li><p>  迪米特法则还有个更简单的定义：只与直接的朋友通信</p>
+</li>
+<li><p>  直接的朋友：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。耦合的方式很多，依赖，关联，组合，聚合等。其中，我们称出现成员变量，方法参数，方法返回值中的类为直接的朋友，而出现在局部变量中的类不是直接的朋友。也就是说，陌生的类最好不要以局部变量的形式出现在类的内部。</p>
+</li>
+</ol>
+<h3 id="2-8-2-应用实例"><a href="#2-8-2-应用实例" class="headerlink" title="2.8.2 应用实例"></a>2.8.2 应用实例</h3><ol>
+<li><p>   有一个学校，下属有各个学院和总部，现要求打印出学校总部员工 ID 和学院员工的 id</p>
+</li>
+<li><p>   编程实现上面的功能</p>
+</li>
+</ol>
+<p>代码实现</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/Demeter/Demeter1.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/Demeter/Demeter1.java</a></p>
+<h3 id="2-8-3-应用实例改进"><a href="#2-8-3-应用实例改进" class="headerlink" title="2.8.3 应用实例改进"></a>2.8.3 应用实例改进</h3><ol>
+<li><p>  前面设计的问题在于 SchoolManager 中，<strong>CollegeEmployee</strong> 类并不是 <strong>SchoolManager</strong> 类的直接朋友 (分析)</p>
+</li>
+<li><p>  按照迪米特法则，应该避免类中出现这样非直接朋友关系的耦合</p>
+</li>
+</ol>
+<p>代码实现</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/Demeter/improve/Demeter2.java">https://github.com/VmythV/DesignPattern/blob/master/DP01principle/src/Demeter/improve/Demeter2.java</a></p>
+<h3 id="2-8-4-迪米特法则注意事项和细节"><a href="#2-8-4-迪米特法则注意事项和细节" class="headerlink" title="2.8.4 迪米特法则注意事项和细节"></a>2.8.4 迪米特法则注意事项和细节</h3><ol>
+<li><p>  迪米特法则的核心是降低类之间的耦合</p>
+</li>
+<li><p>  但是注意：由于每个类都减少了不必要的依赖，因此迪米特法则只是要求降低类间(对象间)耦合关系， 并不是要求完全没有依赖关系</p>
+</li>
+</ol>
+<h2 id="2-9-合成复用原则（Composite-Reuse-Principle）"><a href="#2-9-合成复用原则（Composite-Reuse-Principle）" class="headerlink" title="2.9 合成复用原则（Composite Reuse Principle）"></a>2.9 合成复用原则（Composite Reuse Principle）</h2><h3 id="2-9-1-基本介绍"><a href="#2-9-1-基本介绍" class="headerlink" title="2.9.1 基本介绍"></a>2.9.1 基本介绍</h3><p>原则是尽量使用合成/聚合的方式，而不是使用继承</p>
+<p><img src="2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80.assets/20210207215929.png"></p>
+<h2 id="2-10-设计原则核心思想"><a href="#2-10-设计原则核心思想" class="headerlink" title="2.10 设计原则核心思想"></a>2.10 设计原则核心思想</h2><ol>
+<li><p>  找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起。</p>
+</li>
+<li><p>  针对接口编程，而不是针对实现编程。</p>
+</li>
+<li><p>  为了交互对象之间的松耦合设计而努力</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">木落</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://vmythv.github.io/2021/02/03/2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80/">https://vmythv.github.io/2021/02/03/2021-02-03-JAVA设计模式之前言/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://vmythv.github.io" target="_blank">VmythV's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/myth1314/photo/raw/master/img/20210203210413.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174941.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" target="_blank"><img class="post-qr-code-img" src="https://gitee.com/myth1314/photo/raw/master/img/20200607174911.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/01/05/2021-01-05-Centos%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"><img class="next-cover" src="https://gitee.com/myth1314/photo/raw/master/img/20210104110515.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Centos常用配置</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">木落</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/VmythV"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/VmythV" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="mailto:1635170329@qq.com" target="_blank" title="Email"><i class="iconfont icon-youxiang"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">忠于自己，活的认真，笑的放肆！</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">一、什么是设计模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">二、设计模式七大原则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 设计模式的目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 设计模式七大原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%EF%BC%88SingleResponsibility%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 单一职责原则（SingleResponsibility）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.1.1 基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.1.2 应用实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%92%8C%E7%BB%86%E8%8A%82"><span class="toc-number">2.3.3.</span> <span class="toc-text">2.1.3 单一职责原则注意事项和细节</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99%EF%BC%88Interface-Segregation-Principle%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 接口隔离原则（Interface Segregation Principle）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.4.1.</span> <span class="toc-text">2.4.1 基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.4.2.</span> <span class="toc-text">2.4.2 应用实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-3-%E5%BA%94%E4%BC%A0%E7%BB%9F%E6%96%B9%E6%B3%95%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E4%BD%BF%E7%94%A8%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99%E6%94%B9%E8%BF%9B"><span class="toc-number">2.4.3.</span> <span class="toc-text">2.4.3 应传统方法的问题和使用接口隔离原则改进</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99%EF%BC%88Dependence-Inversion-Principle%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 依赖倒转原则（Dependence Inversion Principle）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.5.1.</span> <span class="toc-text">2.5.1 基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.5.2 应用实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E4%BC%A0%E9%80%92%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%92%8C%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">2.5.3.</span> <span class="toc-text">2.5.3 依赖关系传递的三种方式和应用案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-4-%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%92%8C%E7%BB%86%E8%8A%82"><span class="toc-number">2.5.4.</span> <span class="toc-text">2.5.4 依赖倒转原则的注意事项和细节</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99-Liskov-Substitution-Principle"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 里氏替换原则(Liskov Substitution Principle)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-OO-%E4%B8%AD%E7%9A%84%E7%BB%A7%E6%89%BF%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83%E5%92%8C%E8%AF%B4%E6%98%8E"><span class="toc-number">2.6.1.</span> <span class="toc-text">2.6.1 OO 中的继承性的思考和说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.6.2 基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%BC%95%E5%87%BA%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E6%80%9D%E8%80%83"><span class="toc-number">2.6.3.</span> <span class="toc-text">2.6.3 一个程序引出的问题和思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-4-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">2.6.4.</span> <span class="toc-text">2.6.4 解决方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99%EF%BC%88Open-Close-Principle%EF%BC%89"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 开闭原则（Open Close Principle）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.7.1.</span> <span class="toc-text">2.7.1 基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-2-%E7%9C%8B%E4%B8%8B%E9%9D%A2%E4%B8%80%E6%AE%B5%E4%BB%A3%E7%A0%81"><span class="toc-number">2.7.2.</span> <span class="toc-text">2.7.2 看下面一段代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-3-%E6%96%B9%E5%BC%8F-1-%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">2.7.3.</span> <span class="toc-text">2.7.3 方式 1 的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-4-%E6%94%B9%E8%BF%9B%E7%9A%84%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90"><span class="toc-number">2.7.4.</span> <span class="toc-text">2.7.4 改进的思路分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99%EF%BC%88Demeter-Principle%EF%BC%89"><span class="toc-number">2.8.</span> <span class="toc-text">2.8 迪米特法则（Demeter Principle）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.8.1.</span> <span class="toc-text">2.8.1 基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-2-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.8.2.</span> <span class="toc-text">2.8.2 应用实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-3-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%E6%94%B9%E8%BF%9B"><span class="toc-number">2.8.3.</span> <span class="toc-text">2.8.3 应用实例改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-4-%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%92%8C%E7%BB%86%E8%8A%82"><span class="toc-number">2.8.4.</span> <span class="toc-text">2.8.4 迪米特法则注意事项和细节</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E5%90%88%E6%88%90%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99%EF%BC%88Composite-Reuse-Principle%EF%BC%89"><span class="toc-number">2.9.</span> <span class="toc-text">2.9 合成复用原则（Composite Reuse Principle）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-1-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.9.1.</span> <span class="toc-text">2.9.1 基本介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-number">2.10.</span> <span class="toc-text">2.10 设计原则核心思想</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/02/03/2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80/" title="JAVA设计模式之前言"><img src="https://gitee.com/myth1314/photo/raw/master/img/20210203210413.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAVA设计模式之前言"/></a><div class="content"><a class="title" href="/2021/02/03/2021-02-03-JAVA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%89%8D%E8%A8%80/" title="JAVA设计模式之前言">JAVA设计模式之前言</a><time datetime="2021-02-03T13:01:17.000Z" title="发表于 2021-02-03 21:01:17">2021-02-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/05/2021-01-05-Centos%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" title="Centos常用配置"><img src="https://gitee.com/myth1314/photo/raw/master/img/20210104110515.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Centos常用配置"/></a><div class="content"><a class="title" href="/2021/01/05/2021-01-05-Centos%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/" title="Centos常用配置">Centos常用配置</a><time datetime="2021-01-05T09:55:27.000Z" title="发表于 2021-01-05 17:55:27">2021-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/11/2020-12-11-%E8%80%83%E7%A0%94%EF%BC%88%E6%B5%99%E6%B1%9F%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE%EF%BC%89/" title="2020-12-11-考研（浙江工业大学专业课）"><img src="https://gitee.com/myth1314/photo/raw/master/img/20201211003558.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2020-12-11-考研（浙江工业大学专业课）"/></a><div class="content"><a class="title" href="/2020/12/11/2020-12-11-%E8%80%83%E7%A0%94%EF%BC%88%E6%B5%99%E6%B1%9F%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E4%B8%93%E4%B8%9A%E8%AF%BE%EF%BC%89/" title="2020-12-11-考研（浙江工业大学专业课）">2020-12-11-考研（浙江工业大学专业课）</a><time datetime="2020-12-10T16:34:43.000Z" title="发表于 2020-12-11 00:34:43">2020-12-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/09/2020-12-09-IDEA%E8%B6%85%E5%AE%9E%E7%94%A8%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%88%86%E4%BA%AB/" title="IDEA超实用使用技巧分享"><img src="https://gitee.com/myth1314/photo/raw/master/img/20201209005408.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IDEA超实用使用技巧分享"/></a><div class="content"><a class="title" href="/2020/12/09/2020-12-09-IDEA%E8%B6%85%E5%AE%9E%E7%94%A8%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E5%88%86%E4%BA%AB/" title="IDEA超实用使用技巧分享">IDEA超实用使用技巧分享</a><time datetime="2020-12-08T16:53:21.000Z" title="发表于 2020-12-09 00:53:21">2020-12-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/09/2020-12-09-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94Kloyd%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/" title="数据结构——Kloyd算法过程中矩阵计算方法"><img src="https://gitee.com/myth1314/photo/raw/master/img/20201209003623.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构——Kloyd算法过程中矩阵计算方法"/></a><div class="content"><a class="title" href="/2020/12/09/2020-12-09-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94Kloyd%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/" title="数据结构——Kloyd算法过程中矩阵计算方法">数据结构——Kloyd算法过程中矩阵计算方法</a><time datetime="2020-12-08T16:28:52.000Z" title="发表于 2020-12-09 00:28:52">2020-12-09</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://gitee.com/myth1314/photo/raw/master/img/cool-background.png)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By 木落</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Because love, So love!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'PKfKCD8iIqb1FFuMzS20QAGi-gzGzoHsz',
+      appKey: 'wi5TxydU9Bu5pcUu8u4T22fT',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
